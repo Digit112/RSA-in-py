@@ -34,7 +34,7 @@ def ex_gcd(a, b, show_steps):
     vals = vals[:-1]
     
     if show_steps:
-        print("Sequence of mod operatorws: " + str(vals))
+        print("Sequence of mod operators: " + str(vals))
         print("GCD(%d, %d) = %d\n" % (a, b, vals[-1]))
         
         print("Performing repeated substitution...")
