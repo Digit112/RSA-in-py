@@ -131,7 +131,11 @@ def gen_keys(max_digits):
     N = p*q
     phi = (p-1)*(q-1)
     
-    e = gen_prime(max(p, q), min(max_gen*4, phi))
+    e = 0
+    while True:
+        e = random.randint(max(p, q), phi-1)
+        if ex_gcd(e, phi, False)[0] == 1:
+            break
     
     print("p = %d, q = %d" % (p, q))
     print("N = pq = %d" % N)
@@ -178,7 +182,7 @@ def crack(N, e):
     return d
     
 # Generate keys where N is at most 6 decimal digits long.
-N, e, d = gen_keys(5)
+N, e, d = gen_keys(8)
 
 print("")
 
