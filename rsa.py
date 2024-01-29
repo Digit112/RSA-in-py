@@ -5,9 +5,6 @@
 
 import math
 import random
-import time
-
-import aks
 
 # Used by ex_gcd() to display its steps taken.
 # Returns a string representing an equation of the form r = s * a + t * b
@@ -134,7 +131,7 @@ def gen_keys(max_digits):
     N = p*q
     phi = (p-1)*(q-1)
     
-    e = gen_prime(max(p, q), max_gen)
+    e = gen_prime(max(p, q), min(max_gen*4, phi))
     
     print("p = %d, q = %d" % (p, q))
     print("N = pq = %d" % N)
